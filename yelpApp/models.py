@@ -93,11 +93,11 @@ class Location (models.Model):
 class BusinessDetail(models.Model):
     name=models.CharField(max_length=45)
     description=models.TimeField()
-    specialty=models.CharField(max_length=45)
     business_hours=models.CharField(max_length=45, default="")
     image_url=models.CharField(max_length=255,null=True)
     phone=models.IntegerField()
     category=models.ForeignKey(BusinessCategory,related_name="business",on_delete=models.CASCADE)
+    speciality=models.CharField(max_length=45)
     users=models.ManyToManyField(User,related_name="details", through="Review")
     location=models.ForeignKey(Location,related_name="details", on_delete=models.CASCADE)
     created_at=models.DateTimeField(auto_now_add=True)
