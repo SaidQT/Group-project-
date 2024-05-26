@@ -14,7 +14,7 @@ def create(request):
     if len(errors) > 0:
         for key, value in errors.items():
             messages.error(request, value,extra_tags="fail")
-        return redirect('/')
+        return redirect('/login')
     else:
         password = request.POST['password']
         pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
@@ -36,9 +36,10 @@ def login(request):
         logged_email = email[0] 
         if bcrypt.checkpw(request.POST['password'].encode(), logged_email.password.encode()):
             request.session['userid'] = logged_email.id
-            return redirect('/')
+            return redirect('/login')
     messages.error(request, "The password or email you entered is incorrect",extra_tags="login")
     return redirect("/")
 
 def log(request):
     return render(request,'login.html')
+
