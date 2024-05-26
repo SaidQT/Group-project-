@@ -14,8 +14,8 @@
 				<form action='process' method='post'>
                     {% csrf_token %}
 					<label for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" name="txt" placeholder="First Name" required="">
-                    <input type="text" name="txt" placeholder="Last Name" required="">
+					<input type="text" name="first_name" placeholder="First Name" required="">
+                    <input type="text" name="last_name" placeholder="Last Name" required="">
 					<input type="email" name="email" placeholder="Email" required="">
 					<input type="password" name="password" placeholder="Password" required="">
                     <input type="password" name="confirm_password" placeholder="Confirm Password" required="">
@@ -23,7 +23,7 @@
 				</form>
                 {% for message in messages %}
                     {% if 'fail' in message.tags %}
-                        <div>{{ message }}</div>
+                        <div class='msg'>{{ message }}</div>
                     {% endif %}
                 {% endfor %}
 			</div>
@@ -33,12 +33,12 @@
                     {% csrf_token %}
 					<label for="chk" aria-hidden="true">Login</label>
 					<input type="email" name="email" placeholder="Email" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
+					<input type="password" name="password" placeholder="Password" required="">
 					<button>Login</button>
 				</form>
                 {% for message in messages %}
                     {% if 'login' in message.tags %}
-                        <div>{{ message }}</div>
+                        <div class='msg'>{{ message }}</div>
                     {% endif %}
                 {% endfor %}
 			</div>
