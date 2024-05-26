@@ -19,7 +19,7 @@ class UserManager(models.Manager):
             errors['email']= "Email already exists"
         if postData['password'] != postData['confirm_password']:
             errors['password']="Passwords don't match"
-        return errors
+        return errorss
     
 class CategoryManager(models.Manager):
     def basic_validator(self, postData):
