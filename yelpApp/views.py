@@ -4,7 +4,10 @@ from django.contrib import messages
 import bcrypt
 
 def index(request):
-    return render(request, 'index.html')
+    context={
+        "categories": BusinessCategory.objects.all(),
+    }
+    return render(request, 'index2.html', context)
 
 def create(request):
     errors = User.objects.basic_validator(request.POST)
@@ -36,3 +39,6 @@ def login(request):
             return redirect('/')
     messages.error(request, "The password or email you entered is incorrect",extra_tags="login")
     return redirect("/")
+
+def log(request):
+    return render(request,'login.html')

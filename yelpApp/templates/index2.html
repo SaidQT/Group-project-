@@ -21,21 +21,20 @@
             <a href="#">Contact</a>
         </nav>
         <div>
-            <a href=""> Login / SignUp</a>
+            <a href="/login"> Login / SignUp</a>
         </div>
     </header>
     <div class="slider">
 
 
         <div class="list">
-
+            {%for category in categories%}
             <div class="item">
-                <img
-                    src="https://hips.hearstapps.com/hmg-prod/images/types-of-doctors-1600114658.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*" />
+                <img src="{{ category.image_url }}" alt="{{category.name}}" />
 
                 <div class="content">
                     <div class="title"></div>
-                    <div class="type">Doctors</div><!-- take int from database-->  
+                    <div class="type">{{category.name}}</div><!-- take int from database-->
                     <div class="description">
                         <!--take it from data base  -->
                     </div>
@@ -44,20 +43,17 @@
                     </div>
                 </div>
             </div>
-
-
-            
-        
-
+            {% endfor %}
         </div>
 
 
         <div class="thumbnail">
-
+            {%for category in categories%}
             <div class="item">
-                <img src="https://hips.hearstapps.com/hmg-prod/images/types-of-doctors-1600114658.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*" alt="">
+                <img src="{{category.image_url}}" alt="{{category.name}}">
             </div>
-            
+            {% endfor %}
+
 
         </div>
 

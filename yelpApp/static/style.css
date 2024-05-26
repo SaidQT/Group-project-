@@ -19,8 +19,9 @@ header {
      padding: 10px;
      height: 50px;
      display: flex;
+     box-shadow: 4px 4px 8px #ff7e14cb;
      align-items: center;
-     background-color: #000;
+     background-color: #f8f8f1;
      overflow: hidden;
      position: relative;
 
@@ -28,14 +29,18 @@ header {
 }
 
 header div a {
-     color: #eeee;
-     /* background-color: ; */
+     color: rgb(232, 231, 231);
+     background-color:#ff7e14cb ;
+     font-size: medium;
+     border-radius: 8px;
+     border: 1px solid black;
+     box-shadow: 4px 4px 4px white;
      padding: 5px 10px;
      transition: 0.2s;
 }
 
 header nav a {
-     color: #eee;
+     color: black;
      margin-right: 5px;
      padding: 5px 10px;
      transition: 0.2s;
@@ -61,7 +66,7 @@ header div a:hover {
 .slider {
      height: 92.5vh;
 
-     width: 90vw;
+     width: 100%;
      margin: auto;
      overflow: hidden;
      position: relative;
